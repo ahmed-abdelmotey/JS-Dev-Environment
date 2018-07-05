@@ -1,0 +1,15 @@
+{
+  "name": "JS-Dev-Environment",
+  "version": "1.0.0",
+  "description": "JavaScript development environment Pluralsight course by Cory House",
+  "scripts": {
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ahmed-abdelmotey/JS-Dev-Environment.git"
+  },
+  "keywords": [],
+  "author": "Ahmed Abdelmotey",
+  "license": "MIT",
+  "homepage": "https://github.com/ahmed-abdelmotey/JS-Dev-Environment#readme"
+}
