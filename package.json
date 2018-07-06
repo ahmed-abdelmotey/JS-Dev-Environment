@@ -5,11 +5,11 @@
   "scripts": {
     "test-security": "nsp check",
     "prestart": "node _buildScripts/startMessage.js",
-		"start": "npm-run-all --parallel start:src browser-sync",
-		"start:src": "node _buildScripts/srcServer.js",
+    "start": "npm-run-all --parallel start:src browser-sync",
+    "start:src": "node _buildScripts/srcServer.js",
     "local-tunnel": "lt --port 3000 --subdomain mo3ty",
-		"browser-sync": "browser-sync start",
-		"share": "npm-run-all start:src local-tunnel"
+    "browser-sync": "browser-sync start",
+    "share": "npm-run-all --sequential start:src local-tunnel"
   },
   "repository": {
     "type": "git",
@@ -21,6 +21,11 @@
   "homepage": "https://github.com/ahmed-abdelmotey/JS-Dev-Environment#readme",
   "dependencies": {},
   "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-core": "^6.26.3",
+    "babel-loader": "^7.1.5",
+    "babel-preset-latest": "^6.24.1",
+    "babel-register": "^6.26.0",
     "browser-sync": "^2.24.5",
     "chalk": "^2.4.1",
     "express": "^4.16.3",
