@@ -1,10 +1,12 @@
 import path from 'path';
+import webpack from 'webpack';
 
 export default {
 	mode: 'development',
 	devtool: 'inline-source-map',
 	entry: [
-		path.resolve(__dirname,'src/app')
+		path.resolve(__dirname,'src/app'),
+		'webpack-hot-middleware/client' // add to enable hot module reloading
 	],
 	target: 'web',
 	output: {
@@ -12,7 +14,9 @@ export default {
 		publicPath: '/',
 		filename: 'bundle.js'
 	},
-	plugins: [],
+	plugins: [
+		new webpack.HotModuleReplacementPlugin() // add to enable hot module reloading
+	],
 	module: {
 		rules: [
 			{test: /\.js$/, exclude: /node_modules/, loader: ['babel-loader']},

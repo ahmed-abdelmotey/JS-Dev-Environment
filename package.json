@@ -5,10 +5,12 @@
   "scripts": {
     "test-security": "nsp check",
     "prestart": "babel-node _buildScripts/startMessage.js",
-    "start": "npm run start:src",
+    "start": "npm-run-all --parallel test-security start:src lint:watch",
     "start:src": "babel-node _buildScripts/srcServer.js",
     "local-tunnel": "lt --port 3000 --subdomain mo3ty",
-    "share": "npm-run-all --parallel start:src local-tunnel"
+    "share": "npm-run-all --parallel start:src local-tunnel",
+		"lint": "esw webpack.config.* _buildScripts src --color",
+		"lint:watch": "npm run lint -- --watch"
   },
   "repository": {
     "type": "git",
@@ -30,6 +32,9 @@
     "connect-browser-sync": "^2.1.0",
     "cors": "^2.8.4",
     "css-loader": "^1.0.0",
+    "eslint": "^5.1.0",
+    "eslint-plugin-import": "^2.13.0",
+    "eslint-watch": "^4.0.1",
     "express": "^4.16.3",
     "localtunnel": "^1.9.0",
     "npm-run-all": "^4.1.3",
