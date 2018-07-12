@@ -1,6 +1,5 @@
-var chalk = require('chalk');
-var os = require('os');
-
+import chalk from 'chalk';
+import os from 'os';
 
 
 var networkInterfaces = os.networkInterfaces( );
