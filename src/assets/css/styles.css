@@ -1,3 +1,9 @@
 body{
-	background: blue
+	background: skyblue;
+}
+.scroll{
+	height: 2000px;
+	background: bisque;
+	width: 50%;
+	margin: auto;
 }
