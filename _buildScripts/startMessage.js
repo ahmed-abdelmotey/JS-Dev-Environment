@@ -1,15 +1,15 @@
 import chalk from 'chalk';
-import os from 'os';
+// import os from 'os';
 
 
-var networkInterfaces = os.networkInterfaces( );
+// var networkInterfaces = os.networkInterfaces( );
 
-var interfaces = networkInterfaces['Wi-Fi'].reduce((acc,cur) => {
-	acc [cur.family] = cur.address;
-	return acc;
-}, {})
+// var interfaces = networkInterfaces['Wi-Fi'].reduce((acc,cur) => {
+// 	acc [cur.family] = cur.address;
+// 	return acc;
+// }, {})
 
-var ip =  interfaces['IPv4'] ;
+// var ip =  interfaces['IPv4'] ;
 
 console.log(chalk.green('Starting app in dev mode...'));
-console.log(chalk.white('[External link]'), chalk.cyan('http://' + ip + ':3001'));
+// console.log(chalk.white('[External link]'), chalk.cyan('http://' + ip + ':3001'));
