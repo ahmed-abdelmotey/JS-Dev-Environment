@@ -15,7 +15,7 @@ export default {
 		filename: 'bundle.js'
 	},
 	plugins: [
-		new webpack.HotModuleReplacementPlugin() // add to enable hot module reloading
+		new webpack.HotModuleReplacementPlugin(), // add to enable hot module reloading
 	],
 	module: {
 		rules: [

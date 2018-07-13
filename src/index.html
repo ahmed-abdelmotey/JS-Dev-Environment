@@ -5,10 +5,28 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<meta http-equiv="X-UA-Compatible" content="ie=edge">
 	<link rel="stylesheet" href="assets/css/styles.css">
+
+	<!-- this is to pull polyfills thats only needed by your browser, you can customize it for any features needed -->
+	<script src="https://cdn.polyfill.io/v2/polyfill.min.js"></script>
 	<title>Starter project</title>
 </head>
 <body>
 	<h1>Hello World</h1>
+
+	<h2>Users</h2>
+	<table>
+		<thead>
+			<th>&nbsp;</th>
+			<th>Id</th>
+			<th>First Name</th>
+			<th>Last Name</th>
+			<th>Email</th>
+		</thead>
+		<tbody id="users">
+
+		</tbody>
+	</table>
+
 	<script src="bundle.js"></script>
 	<!-- <script i d="__bs_script__">//<![CDATA[
     document.write("<script async src='http://HOST:3001/browser-sync/browser-sync-client.js?v=2.24.5'><\/script>".replace("HOST", location.hostname));

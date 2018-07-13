@@ -5,14 +5,17 @@
   "scripts": {
     "test-security": "nsp check",
     "prestart": "babel-node _buildScripts/startMessage.js",
-    "start": "npm-run-all --parallel test-security start:src lint:watch test:watch",
+    "start": "npm-run-all --parallel --aggregate-output  test-security start:src lint:watch test:watch start:mock-api",
     "start:src": "babel-node _buildScripts/srcServer.js",
     "local-tunnel": "lt --port 3000 --subdomain mo3ty",
     "share": "npm-run-all --parallel start:src local-tunnel",
     "lint": "esw webpack.config.* _buildScripts src --color",
-		"lint:watch": "npm run lint -- --watch",
-		"test": "mocha --reporter progress _buildScripts/testSetup.js \"src/**/*.spec.js\"",
-		"test:watch": "npm test -- --watch"
+    "lint:watch": "npm run lint -- --watch",
+    "test": "mocha --reporter progress _buildScripts/testSetup.js \"src/**/*.spec.js\"",
+    "test:watch": "npm test -- --watch",
+    "generate-mock-data": "babel-node _buildScripts/generateMockData.js",
+    "prestart:mock-api": "npm run generate-mock-data",
+    "start:mock-api": "json-server --watch src/api/db.json --port 3001"
   },
   "repository": {
     "type": "git",
@@ -22,7 +25,9 @@
   "author": "Ahmed Abdelmotey",
   "license": "MIT",
   "homepage": "https://github.com/ahmed-abdelmotey/JS-Dev-Environment#readme",
-  "dependencies": {},
+  "dependencies": {
+    "whatwg-fetch": "^2.0.4"
+  },
   "devDependencies": {
     "babel-cli": "^6.26.0",
     "babel-core": "^6.26.3",
@@ -41,6 +46,8 @@
     "eslint-watch": "^4.0.1",
     "express": "^4.16.3",
     "jsdom": "^11.11.0",
+    "json-schema-faker": "^0.5.0-rc15",
+    "json-server": "^0.14.0",
     "localtunnel": "^1.9.0",
     "mocha": "^5.2.0",
     "npm-run-all": "^4.1.3",
