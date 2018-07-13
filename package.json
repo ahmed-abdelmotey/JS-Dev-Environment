@@ -5,7 +5,7 @@
   "scripts": {
     "test-security": "nsp check",
     "prestart": "babel-node _buildScripts/startMessage.js",
-    "start": "npm-run-all --parallel --aggregate-output  test-security start:src lint:watch test:watch start:mock-api",
+    "start": "npm-run-all --parallel test-security start:src lint:watch test:watch start:mock-api",
     "start:src": "babel-node _buildScripts/srcServer.js",
     "local-tunnel": "lt --port 3000 --subdomain mo3ty",
     "share": "npm-run-all --parallel start:src local-tunnel",
@@ -51,6 +51,7 @@
     "eslint-watch": "^4.0.1",
     "express": "^4.16.3",
     "extract-text-webpack-plugin": "^3.0.2",
+    "faker": "^4.1.0",
     "html-webpack-plugin": "^3.2.0",
     "jsdom": "^11.11.0",
     "json-schema-faker": "^0.5.0-rc15",

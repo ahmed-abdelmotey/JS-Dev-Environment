@@ -13,8 +13,9 @@ describe('Nock sample mocking', ()=> {
 		});
 
 		testApiCall().then(res=> {
-			console.log(res);
-			expect(res._id).to.equal('123ABC');
-		}, err => console.log(err));
+			expect(res._id).to.equal('123ABC'); // eslint-disable-line no-undef
+		}).catch(() => {
+			return 0;
+		});
 	})
 });

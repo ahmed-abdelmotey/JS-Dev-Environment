@@ -7,6 +7,7 @@ export const schema = {
 			"maxItems": 10,
 			"items": {
 				"type": "object",
+				"additionalProperties": false,
 				"properties": {
 					"id": {
 						"type": "integer",
@@ -15,14 +16,17 @@ export const schema = {
 					},
 					"firstName": {
 						"type": "string",
+						"minLength": 2,
 						"faker": "name.firstName"
 					},
 					"lastName": {
 						"type": "string",
+						"minLength": 2,
 						"faker": "name.lastName"
 					},
 					"email": {
 						"type": "string",
+						"minLength": 2,
 						"faker": "internet.email"
 					}
 				},
