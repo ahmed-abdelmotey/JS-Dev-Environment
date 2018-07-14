@@ -25,8 +25,10 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.static(path.join(__dirname, '../src')));
 app.use(cors());
 app.use(webpackDevMiddleware(compiler, {
-	stats: "errors-only"
+	stats: "errors-only",
+	publicPath: "/"
 }));
+
 app.use(webpackHotMiddleware(compiler));
 // app.use(bsConnect(bs));
 
